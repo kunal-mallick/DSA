@@ -7,7 +7,10 @@ public class main {
 		Linked_List ll = new Linked_List(7);
 		
 		ll.pirntList();
-
+		
+		ll.getHead();
+		ll.getTail();
+		ll.getLenght();
 	}
 
 }

@@ -22,6 +22,21 @@ public class Linked_List {
 			temp= temp.nest;
 		}
 	}
+	
+	public void getHead() {
+		
+		System.out.println("Head : "+head.value);
+	}
+	
+	public void getTail() {
+		
+		System.out.println("Tail : "+tail.value);
+	}
+	
+	public void getLenght() {
+		
+		System.out.println("Lenght : "+lenght);
+	}
 
 }
 
