@@ -12,7 +12,7 @@ public class doublyLinkedList {
 		lenght = 1;
 	}
 	
-	public void pirntList() {
+	public void printList() {
 		
 		Node temp = head;
 		System.out.print("\n");
@@ -37,4 +37,44 @@ public class doublyLinkedList {
 		
 		System.out.println(" Lenght : "+lenght);
 	}
+	
+	public void getAll() {
+		getHead();
+		getTail();
+		getLenght();
+		printList();
+	}
+	
+	public void append(int value) {
+		
+		Node newnode = new Node(value);
+		if (lenght == 0) {
+			head = newnode;
+			tail = newnode;
+		}
+		else {
+			tail.nest = newnode;
+			newnode.pre = tail;
+			tail = newnode;
+		}
+		lenght++;
+	}
+	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

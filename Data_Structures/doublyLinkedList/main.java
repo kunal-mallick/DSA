@@ -6,10 +6,10 @@ public class main {
 		
 		doublyLinkedList dll = new doublyLinkedList(11);
 		
-		dll.getHead();
-		dll.getTail();
-		dll.getLenght();
-		dll.pirntList();
+		dll.append(3);
+		dll.append(23);
+		dll.append(7);
+		dll.getAll();
 	}
 
 }
