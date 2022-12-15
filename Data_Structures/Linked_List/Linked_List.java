@@ -92,9 +92,104 @@ public class Linked_List {
 			newnode.nest = head;
 			head = newnode;
 		}
+		lenght++;
 	}
 	
+	public Node removeFirst() {
+		
+		if(lenght == 0) {
+			return null;
+		}
+		
+		Node temp = head;
+		head = head.nest;
+		tail.nest = null;
+		lenght--;
+		
+		if(lenght == 0) {
+			tail = null;
+		}
+		return temp;
+	}
 	
+	public Node get(int index) {
+		if(index < 0 || index >= lenght) {
+			return null;
+		}
+		Node temp = head;
+		for(int x = 0; x < index; x++) {
+			temp = temp.nest;
+		}
+		return temp;
+	}
+	
+	public boolean set(int index, int value) {
+		Node temp = get(index);
+		if(temp != null) {
+			temp.value = value;
+			return true;
+		}
+		return false;
+	}
+	
+	public boolean insert(int index, int value) {
+		if (index < 0 || index >= lenght) {
+			return false;
+		}
+		
+		if(index == 0) {
+			prepend(value);
+			return true;
+		}
+		
+		if(index == lenght) {
+			append(value);
+			return true;
+		}
+		
+		Node newnode =new Node(value);
+		Node temp = get(index - 1);
+		newnode.nest = temp.nest;
+		temp.nest = newnode;
+		lenght++;
+		return true;
+	}
+	
+	public Node remove(int index) {
+		
+		if(index < 0 || index >= lenght) {
+			return null;
+		}
+		
+		if(index == lenght-1) {
+			return removeLast();
+		}
+		
+		if(index == 0) {
+			return removeFirst();
+		}
+		
+		Node pre = get(index-1);
+		Node temp = pre.nest;
+		pre.nest = temp.nest;
+		temp.nest = null;
+		lenght--;
+		return temp;
+	}
+	
+	public void reverse() {
+		Node temp = head;
+		head = tail;
+		tail = temp;
+		Node after = temp.nest;
+		Node before = null;
+		for(int x = 0; x < lenght; x++) {
+			after = temp.nest;
+			temp.nest = before;
+			before = temp;
+			temp = after;
+		}
+	}
 }
 
 

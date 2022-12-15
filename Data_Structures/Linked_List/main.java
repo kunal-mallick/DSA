@@ -2,6 +2,9 @@ package Linked_List;
 
 public class main {
 
+	/**
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		
 		Linked_List ll = new Linked_List(11);
@@ -20,6 +23,21 @@ public class main {
 		ll.pirntList();
 		
 		ll.prepend(4);
+		ll.pirntList();
+		
+		ll.set(0, 1);
+		ll.pirntList();
+		
+		System.out.print("\n Remove First: "+ll.removeFirst().value);
+		ll.pirntList();
+		
+		ll.insert(2,4);
+		ll.pirntList();
+		
+		ll.remove(2);
+		ll.pirntList();
+		
+		ll.reverse();
 		ll.pirntList();
 	}
 
