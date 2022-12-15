@@ -9,16 +9,17 @@ public class main {
 		ll.append(3);
 		ll.append(23);
 		ll.append(7);
+		ll.append(4);
 		
 		ll.getHead();
 		ll.getTail();
 		ll.getLenght();
-		
 		ll.pirntList();
 		
-		ll.removeLast();
+		System.out.print("\n Remove last: "+ll.removeLast().value);
+		ll.pirntList();
 		
-		
+		ll.prepend(4);
 		ll.pirntList();
 	}
 

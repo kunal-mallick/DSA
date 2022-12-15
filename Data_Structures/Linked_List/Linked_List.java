@@ -16,6 +16,7 @@ public class Linked_List {
 	public void pirntList() {
 		
 		Node temp = head;
+		System.out.print("\n");
 		while(temp != null) {
 			
 			System.out.print(" "+temp.value);
@@ -53,10 +54,10 @@ public class Linked_List {
 		
 	}
 	
-	public void removeLast() {
+	public Node removeLast() {
 		
 		if(lenght == 0) {
-			System.out.print("Null");
+			return null;
 		}
 		
 		Node temp = head;
@@ -76,7 +77,44 @@ public class Linked_List {
 			tail = null;
 		}
 		
-		System.out.println("\n Remove: "+temp.value);
+		return temp;
 	}
 	
+	public void prepend(int value) {
+		
+		Node newnode = new Node(value);
+		
+		if(lenght == 0) {	
+			head = newnode;
+			tail = newnode;
+		}
+		else {
+			newnode.nest = head;
+			head = newnode;
+		}
+	}
+	
+	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
